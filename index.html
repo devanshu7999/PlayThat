@@ -7,24 +7,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .video-docker video {
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
 
-        .video-docker::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: 1;
-        }
-
-        .video-content {
+/*Hero Section CSS*/
+        
+        .img-content {
             z-index: 2;
         }
 
@@ -32,10 +18,358 @@
             scroll-behavior: smooth;
         }
 
+        
+
+/*Why Choose US CSS*/
+.features-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                flex-wrap: wrap;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 1rem;
+            }
+    
+            .feature-card {
+                width: 300px;
+                height: 300px;
+                padding: 2rem;
+                transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                background: rgba(255, 255, 255, 0.9);
+                border-radius: 20px;
+                position: relative;
+                overflow: hidden;
+                border: 2px solid rgba(59, 130, 246, 0.1);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+    
+            .feature-card::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(45deg, #3B82F6, #2563EB, #1D4ED8, #3B82F6);
+                background-size: 400% 400%;
+                z-index: 0;
+                opacity: 0;
+                transition: opacity 0.5s ease;
+            }
+    
+            .feature-card:hover::before {
+                opacity: 1;
+            }
+    
+            .feature-card > * {
+                position: relative;
+                z-index: 1;
+                transition: all 0.3s ease;
+            }
+    
+            .feature-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            }
+    
+            .feature-card:hover h3
+            {
+                color:beige;
+            }
+
+            .feature-card:hover p {
+                color: gainsboro;
+            }
+    
+            .feature-icon {
+                width: 70px;
+                height: 70px;
+                background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 1.5rem;
+                transition: all 0.3s ease;
+            }
+    
+            .feature-card:hover .feature-icon {
+                background: rgba(255, 255, 255, 0.2);
+            }
+    
+            .feature-card:hover .feature-icon svg {
+                color: white;
+            }
+    
+            @keyframes gradientBorder {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+    
+            @media (max-width: 1024px) {
+                .features-container {
+                    gap: 1rem;
+                }
+                .feature-card {
+                    width: 280px;
+                    height: 280px;
+                }
+            }
+    
+            @media (max-width: 768px) {
+                .features-container {
+                    flex-direction: column;
+                }
+                .feature-card {
+                    width: 100%;
+                    max-width: 300px;
+                }
+            }
+
+
+
+/* Hero Section */
+.hero-section {
+            position: relative;
+            z-index: 10;
+            padding: 8rem 0;
+            display: flex;
+            align-items: center;
+            min-height: 85vh;
+            background: linear-gradient(135deg, #2563eb 0%, #4338ca 100%);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+
+        @media (min-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1.2fr 1fr;
+                align-items: center;
+            }
+        }
+
+        .hero-content {
+            color: white;
+            max-width: 600px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 9999px;
+            margin-bottom: 2rem;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-btn {
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 1.125rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hero-btn-primary {
+            background: white;
+            color: #2563eb;
+            border: none;
+        }
+
+        .hero-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: white;
+        } 
+        
+        
+        
+        .hero-image {
+            position: relative;
+            display: none;
+        }
+
+        @media (min-width: 1024px) {
+            .hero-image {
+                display: block;
+            }
+        }
+
+        .hero-image-main {
+            width: 100%;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+
+
+/* CTA Section */
+.cta {
+        background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+        color: white;
+        padding: 8rem 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .cta::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('/api/placeholder/1920/1080') center/cover;
+        opacity: 0.1;
+        z-index: 1;
+    }
+
+    .cta .my-container {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+    }
+
+    .cta h2 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .cta p {
+        font-size: 1.25rem;
+        max-width: 600px;
+        margin: 0 auto 3rem;
+        line-height: 1.7;
+    }
+
+    .cta-button {
+        display: inline-flex;
+        align-items: center;
+        padding: 1.25rem 3rem;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #2563eb;
+        background: white;
+        border: none;
+        border-radius: 9999px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+        background: #f8fafc;
+    }
+
+    .cta-button:active {
+        transform: translateY(0);
+    }
+
+    .cta-button::after {
+        content: '→';
+        margin-left: 1rem;
+        transition: transform 0.3s ease;
+    }
+
+    .cta-button:hover::after {
+        transform: translateX(5px);
+    }
+
+    .cta-circles {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        overflow: hidden;
+    }
+
+    .cta-circle {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .cta-circle:nth-child(1) {
+        width: 300px;
+        height: 300px;
+        top: -150px;
+        left: -150px;
+    }
+
+    .cta-circle:nth-child(2) {
+        width: 200px;
+        height: 200px;
+        bottom: -100px;
+        right: -100px;
+    }
     </style>
 </head>
 <body class="font-sans">
-    <!-- Header -->
+    <!-- Header Section-->
     <header class="bg-white shadow-md fixed w-full top-0 z-50">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
             <div class="text-2xl font-bold text-blue-600">PlayThat</div>
@@ -48,65 +382,141 @@
             <div class="flex space-x-4">
                 <button class="bg-green-500 text-white px-4 py-2 rounded-lg">Get the App</button>
                 <button class="bg-blue-600 text-white px-4 py-2 rounded-lg">Login</button>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg">Logout</button>
             </div>
         </nav>
     </header>
 
 
+    
+
     <!-- Hero Section -->
-    <section class="relative h-screen flex flex-col items-center justify-center text-center text-white py-0 px-3">
-        <div class="video-docker absolute top-0 left-0 w-full h-full overflow-hidden">
-            <video class="min-w-full min-h-full absolute object-cover" src="images/bb.mp4"
-                type="video/mp4" autoplay muted loop></video>                
-        </div>
-        <div class="video-content space-y-2">
-            <h1 class="text-2xl font-extrabold leading-9 tracking-tight mb-3 text-white-900  sm:text-4xl sm:leading-10 md:text-5xl md:leading-normal">PlayThat
-            </h1>
-            <h3 class="font-light text-3xl">Play Anytime, Anywhere with PlayThat</h3>
-        </div>
-    </section>
-
-    <!-- About Us -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-8">About Us</h2>
-            <p class="text-lg text-gray-700 max-w-3xl mx-auto text-center">
-                PlayThat is a convenient booking service that enables users to reserve their preferred sports and fun activities for specific time slots with ease. We believe in making leisure time planning easy and enjoyable for everyone, offering a diverse range of activities to choose from.
-            </p><br>
-            <p class="text-lg text-gray-700 max-w-3xl mx-auto text-center">
-            It is dedicated to providing a seamless booking experience for sports and fun activities, tailored to individual preferences.
-            </p><br>
-            <p class="text-lg text-gray-700 max-w-3xl mx-auto text-center">
-            We believe in making leisure time planning easy and enjoyable for everyone, offering a diverse range of activities to choose from.
-            </p>
-        </div>
-    </section>
-
-    <!-- Why Choose Us -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12">Why Choose Us</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-6 border rounded-lg shadow-sm">
-                    <h3 class="text-xl font-bold mb-4">Convenient Booking</h3>
-                    <p>Quickly book your preferred sport or fun activity for a specific time slot without any hassle.</p>
+    
+    <section class="hero-section">
+        
+        
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="lucide-zap"></i> New Features Available
                 </div>
-                <div class="p-6 border rounded-lg shadow-sm">
-                    <h3 class="text-xl font-bold mb-4">Time-Specific Reservations</h3>
-                    <p>Ensure your spot for a specific time slot in your favorite sports and fun activities.</p>
+                <h1 class="hero-title">Play Anytime, Anywhere with PlayThat</h1>
+                <p class="hero-description">
+                    Book sports facilities and activities instantly. Join thousands of players making the most of their free time with our seamless booking platform.
+                </p>
+                <div class="hero-buttons">
+                    <button class="hero-btn hero-btn-primary">
+                        Book Now
+                        <i class="lucide-arrow-right"></i>
+                    </button>
+                    <button class="hero-btn hero-btn-secondary">
+                        Learn More
+                        <i class="lucide-chevron-right"></i>
+                    </button>
                 </div>
-                <div class="p-6 border rounded-lg shadow-sm">
-                    <h3 class="text-xl font-bold mb-4">Diverse Activity Options</h3>
-                    <p>Choose from a wide range of sports and fun activities to book for a specific time slot.</p>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-image-main">
+                        <img src="images/" alt="Hero Image" >
+                    </div>
+                </div>
+                </div>
+
+            
+                </section>
+
+
+
+    <!-- About Us Section -->
+<section class="py-20 bg-gradient-to-b from-blue-50 to-white relative overflow-hidden">
+    <div class="container mx-auto px-6">
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 left-0 w-32 h-32 bg-blue-100 rounded-full opacity-50 animate-pulse"></div>
+        <div class="absolute bottom-0 right-0 w-40 h-40 bg-blue-200 rounded-full opacity-30 animate-bounce"></div>
+
+        <h2 class="text-4xl md:text-4xl font-bold text-center text-blue-600 mb-10 relative z-10">
+            About Us
+        </h2>
+
+        <div class="flex flex-col md:flex-row items-center md:items-start justify-between space-y-10 md:space-y-0 md:space-x-12 relative z-10">
+            <!-- Left: Image or Illustration -->
+            <div class="w-full md:w-1/2 flex justify-center md:justify-end">
+                <img src="images/c-stadium.jpg" alt="About Us" 
+                     class="w-full max-w-md rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
+            </div>
+
+            <!-- Right: Content -->
+            <div class="w-full md:w-1/2 space-y-6 text-center md:text-left">
+                <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
+                    At <span class="font-bold text-blue-600">PlayThat</span>, we redefine the way you plan your leisure activities. Whether it’s booking your favorite sport or discovering fun activities, we’re here to make it effortless and enjoyable.
+                </p>
+                <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
+                    Our platform brings you a wide range of options, ensuring there’s always something exciting to look forward to. From quick reservations to personalized time slots, PlayThat has it all.
+                </p>
+                <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
+                    Join us today to experience the joy of hassle-free booking, tailored just for you.
+                </p>
+                <a href="#contact" 
+                   class="inline-block bg-blue-600 text-white px-8 py-3 rounded-full shadow-lg hover:bg-blue-500 transform hover:scale-105 transition duration-300">
+                    Book Now
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Why Choose Us Section-->
+        <section class="py-20 bg-gradient-to-b from-white to-blue-50 relative overflow-hidden">
+    
+            <!-- Decorative Elements -->
+        <div class="absolute top-0 right-0 w-32 h-32 bg-blue-100 rounded-full opacity-50 animate-pulse"></div>
+        <div class="absolute bottom-0 left-0 w-40 h-40 bg-blue-200 rounded-full opacity-30 animate-bounce"></div>
+
+
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 text-blue-600">Why Choose Us</h2>
+            
+            <div class="features-container">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Convenient Booking</h3>
+                    <p class="text-gray-600 text-sm">Quickly book your preferred sport or fun activity for a specific time slot without any hassle.</p>
+                </div>
+    
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Time-Specific Reservations</h3>
+                    <p class="text-gray-600 text-sm">Ensure your spot for a specific time slot in your favorite sports and fun activities.</p>
+                </div>
+    
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Diverse Activity Options</h3>
+                    <p class="text-gray-600 text-sm">Choose from a wide range of sports and fun activities to book for a specific time slot.</p>
                 </div>
             </div>
         </div>
     </section>
 
+
     <!-- Booking Section -->
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-8">Book Your Activity</h2>
+            <h2 class="text-4xl font-bold text-center mb-8 text-blue-600">Book Your Activity</h2>
             <div class="max-w-2xl mx-auto mb-8">
                 <input type="search" placeholder="Search activities or location..." class="w-full p-4 border rounded-lg">
             </div>
@@ -118,20 +528,104 @@
                         <h3 class="font-bold mb-2">Tennis Court</h3>
                         <p class="text-gray-600 mb-4">Professional tennis court with equipment rental available</p>
                         <div class="flex justify-between items-center">
+                            <span class="font-bold">₹850/hr</span>
+                            <button class="bg-blue-600 text-white px-4 py-2 rounded">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Activity Cards -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="images/football.jpg" alt="Activity" class="w-full">
+                    <div class="p-4">
+                        <h3 class="font-bold mb-2">Football Court</h3>
+                        <p class="text-gray-600 mb-4">Professional football court with equipment rental available</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold">₹1700/hr</span>
+                            <button class="bg-blue-600 text-white px-4 py-2 rounded">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Sample Activity Cards -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="images/basketball.jpg" alt="Activity" class="w-full">
+                    <div class="p-4">
+                        <h3 class="font-bold mb-2">Basketball Court</h3>
+                        <p class="text-gray-600 mb-4">Professional tennis court with equipment rental available</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold">₹1500/hr</span>
+                            <button class="bg-blue-600 text-white px-4 py-2 rounded">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Sample Activity Cards -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="images/cricket.jpg" alt="Activity" class="w-full">
+                    <div class="p-4">
+                        <h3 class="font-bold mb-2">Box Cricket</h3>
+                        <p class="text-gray-600 mb-4">Box Cricket court with equipment rental available</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold">₹1000/hr</span>
+                            <button class="bg-blue-600 text-white px-4 py-2 rounded">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Sample Activity Cards -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="images/volleyball.jpg" alt="Activity" class="w-full">
+                    <div class="p-4">
+                        <h3 class="font-bold mb-2">Volleyball Court</h3>
+                        <p class="text-gray-600 mb-4">Volleyball court with equipment rental available</p>
+                        <div class="flex justify-between items-center">
                             <span class="font-bold">₹500/hr</span>
                             <button class="bg-blue-600 text-white px-4 py-2 rounded">Book Now</button>
                         </div>
                     </div>
                 </div>
+
+
+                <!-- Sample Activity Cards -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden relative">
+                    <!-- Circular Button -->
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <a href="#activities" 
+                           class="w-36 h-36 bg-gradient-to-r from-blue-500 to-green-500 text-white flex items-center justify-center rounded-full shadow-lg transform hover:scale-105 transition duration-300">
+                            <span class="font-bold text-sm text-center leading-tight">Explore<br>More</span>
+                        </a>
+                    </div>
+                </div>
+                
+                
                 <!-- More activity cards would go here -->
             </div>
         </div>
     </section>
 
-    <!-- Contact Form -->
+
+    <!--Ready to Play Section-->
+    <section class="cta">
+        <div class="cta-circles">
+            <div class="cta-circle"></div>
+            <div class="cta-circle"></div>
+        </div>
+        <div class="my-container">
+            <h2>Ready to Play?</h2>
+            <p>Join thousands of sports enthusiasts who are already using PlayThat to make their sporting life easier and more enjoyable. Start your journey today!</p>
+            <button class="cta-button">Get Started Now</button>
+        </div>
+    </section>
+
+
+    <!-- Contact Us Section-->
     <section class="py-16 bg-gray-100">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-8">Contact Us</h2>
+            <h2 class="text-4xl font-bold text-center mb-8 text-blue-600">Contact Us</h2>
             <div class="max-w-xl mx-auto p-8 border-2 border-blue-600 rounded-lg shadow-lg bg-white">
             <h2 class="text-3xl font-bold text-center mb-8 text-blue-600">Get in Touch</h2>
             <div class="max-w-xl mx-auto">
@@ -147,7 +641,8 @@
         </div>
     </section>
 
-    <!-- Footer -->
+
+    <!-- Footer Section-->
     <footer class="bg-gray-800 text-white py-12">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-8">
