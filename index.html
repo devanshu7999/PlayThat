@@ -334,6 +334,7 @@
         position: relative;
         z-index: 2;
         text-align: center;
+        padding: 25px;
     }
 
     .cta h2 {
@@ -416,6 +417,179 @@
         bottom: -100px;
         right: -100px;
     }
+
+
+/*Contact Us Section*/
+.contact-us {
+    background: #f0f4f8;
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.page-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    display: flex;
+    gap: 40px;
+    padding: 30px;
+    flex-wrap: wrap;
+}
+
+.f-container {
+    flex: 1;
+    min-width: 380px;
+    padding: 35px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.f-container:hover {
+    transform: translateY(-5px);
+}
+
+.business-card {
+    flex: 1;
+    min-width: 380px;
+    padding: 40px;
+    background: linear-gradient(135deg, #2563eb 0%, #4338ca 100%);
+    border-radius: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 15px 35px rgba(30, 60, 114, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.business-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+    z-index: 1;
+}
+
+.business-card h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    font-weight: 700;
+    position: relative;
+    z-index: 2;
+}
+
+.business-card p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 35px;
+    opacity: 0.95;
+    position: relative;
+    z-index: 2;
+}
+
+.business-button {
+    background: rgba(255, 255, 255, 0.9);
+    color: #1e3c72;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.business-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    background: white;
+}
+
+.form-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #1e3c72;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-label {
+    display: block;
+    text-transform: uppercase;
+    color: #2a5298;
+    font-size: 13px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    color: #2d3748;
+    background: #f8fafc;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #1e3c72;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(30, 60, 114, 0.1);
+}
+
+textarea.form-input {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.send-button {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #2563eb 0%, #4338ca 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.send-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(42, 82, 152, 0.2);
+}
+
+@media (max-width: 768px) {
+    .page-container {
+        padding: 20px;
+        gap: 30px;
+    }
+    
+    .f-container, .business-card {
+        min-width: 100%;
+        padding: 25px;
+    }
+}
     </style>
 </head>
 <body class="font-sans">
@@ -719,18 +893,47 @@
     <!-- Contact Us Section-->
     <section class="py-16 bg-gray-100">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-8 text-blue-600">Contact Us</h2>
-            <div class="max-w-xl mx-auto p-8 border-2 border-blue-600 rounded-lg shadow-lg bg-white">
-            <h2 class="text-3xl font-bold text-center mb-8 text-blue-600">Get in Touch</h2>
-            <div class="max-w-xl mx-auto">
-                <form class="space-y-4">
-                    <input type="text" placeholder="Name" class="w-full p-3 border rounded">
-                    <input type="email" placeholder="Email" class="w-full p-3 border rounded">
-                    <input type="tel" placeholder="Phone" class="w-full p-3 border rounded">
-                    <textarea placeholder="Message" rows="4" class="w-full p-3 border rounded"></textarea>
-                    <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded w-full">Send Message</button>
-                </form>
+            <h2 class="text-4xl font-bold text-center  text-blue-600">Contact Us</h2>
+            
+
+            <div class="contact-us ">    
+                <div class="page-container">
+                    <div class="business-card">
+                        <h2>List your business with us</h2>
+                        <p>Join thousands of successful businesses in our directory. Boost your visibility, connect with new customers, and grow your business exponentially.</p>
+                        <div class="flex justify-center mt-3"><button class="business-button">List Now →</button></div>
+                    </div>
+                
+                    <div class="f-container">
+                        <h1 class="form-title">Get in Touch</h1>
+                        <form>
+                            <div class="form-group">
+                                <label class="form-label">Name</label>
+                                <input type="text" class="form-input" placeholder="Enter your full name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-input" placeholder="Enter your email id">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Phone </label>
+                                <input type="tel" class="form-input" placeholder="Enter your phone no.">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Message</label>
+                                <textarea class="form-input" placeholder="..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="send-button">Send Inquiry</button>
+                        </form>
+                    </div>
+                </div>
             </div>
+
+
         </div>
         </div>
     </section>
