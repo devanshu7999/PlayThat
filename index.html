@@ -7,131 +7,69 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-
-/*Hero Section CSS*/
-        
-        .img-content {
-            z-index: 2;
+    /* Mobile menu styles */
+    .mobile-menu {
+            position: absolute;
+            left: 0;
+            right: 0;
+            background: white;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease-in-out;
+            opacity: 0;
+            visibility: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
+
+        .mobile-menu.show {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Hamburger menu animation */
+        .hamburger-line {
+            transition: all 0.3s ease-in-out;
+        }
+
+        .hamburger.active .hamburger-line:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active .hamburger-line:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* Button hover effects */
+        .auth-button {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .auth-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .auth-button:hover::before {
+            left: 0;
+        }
+     
 
         html {
             scroll-behavior: smooth;
         }
-
         
-
-/*Why Choose US CSS*/
-.features-container {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 2rem;
-                flex-wrap: wrap;
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 0 1rem;
-            }
-    
-            .feature-card {
-                width: 300px;
-                height: 300px;
-                padding: 2rem;
-                transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-                background: rgba(255, 255, 255, 0.9);
-                border-radius: 20px;
-                position: relative;
-                overflow: hidden;
-                border: 2px solid rgba(59, 130, 246, 0.1);
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-            }
-    
-            .feature-card::before {
-                content: '';
-                position: absolute;
-                inset: 0;
-                background: linear-gradient(45deg, #3B82F6, #2563EB, #1D4ED8, #3B82F6);
-                background-size: 400% 400%;
-                z-index: 0;
-                opacity: 0;
-                transition: opacity 0.5s ease;
-            }
-    
-            .feature-card:hover::before {
-                opacity: 1;
-            }
-    
-            .feature-card > * {
-                position: relative;
-                z-index: 1;
-                transition: all 0.3s ease;
-            }
-    
-            .feature-card:hover {
-                transform: translateY(-10px);
-                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            }
-    
-            .feature-card:hover h3
-            {
-                color:beige;
-            }
-
-            .feature-card:hover p {
-                color: gainsboro;
-            }
-    
-            .feature-icon {
-                width: 70px;
-                height: 70px;
-                background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
-                border-radius: 20px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-bottom: 1.5rem;
-                transition: all 0.3s ease;
-            }
-    
-            .feature-card:hover .feature-icon {
-                background: rgba(255, 255, 255, 0.2);
-            }
-    
-            .feature-card:hover .feature-icon svg {
-                color: white;
-            }
-    
-            @keyframes gradientBorder {
-                0% { background-position: 0% 50%; }
-                50% { background-position: 100% 50%; }
-                100% { background-position: 0% 50%; }
-            }
-    
-            @media (max-width: 1024px) {
-                .features-container {
-                    gap: 1rem;
-                }
-                .feature-card {
-                    width: 280px;
-                    height: 280px;
-                }
-            }
-    
-            @media (max-width: 768px) {
-                .features-container {
-                    flex-direction: column;
-                }
-                .feature-card {
-                    width: 100%;
-                    max-width: 300px;
-                }
-            }
-
-
-
 /* Hero Section */
 .hero-section {
             position: relative;
@@ -258,8 +196,120 @@
         }
 
 
+        /*Why Choose US CSS*/
+            .features-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                flex-wrap: wrap;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 1rem;
+            }
+    
+            .feature-card {
+                width: 300px;
+                height: 300px;
+                padding: 2rem;
+                transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                background: rgba(255, 255, 255, 0.9);
+                border-radius: 20px;
+                position: relative;
+                overflow: hidden;
+                border: 2px solid rgba(59, 130, 246, 0.1);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+    
+            .feature-card::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(45deg, #3B82F6, #2563EB, #1D4ED8, #3B82F6);
+                background-size: 400% 400%;
+                z-index: 0;
+                opacity: 0;
+                transition: opacity 0.5s ease;
+            }
+    
+            .feature-card:hover::before {
+                opacity: 1;
+            }
+    
+            .feature-card > * {
+                position: relative;
+                z-index: 1;
+                transition: all 0.3s ease;
+            }
+    
+            .feature-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            }
+    
+            .feature-card:hover h3
+            {
+                color:beige;
+            }
 
-/* CTA Section */
+            .feature-card:hover p {
+                color: gainsboro;
+            }
+    
+            .feature-icon {
+                width: 70px;
+                height: 70px;
+                background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 1.5rem;
+                transition: all 0.3s ease;
+            }
+    
+            .feature-card:hover .feature-icon {
+                background: rgba(255, 255, 255, 0.2);
+            }
+    
+            .feature-card:hover .feature-icon svg {
+                color: white;
+            }
+    
+            @keyframes gradientBorder {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+    
+            @media (max-width: 1024px) {
+                .features-container {
+                    gap: 1rem;
+                }
+                .feature-card {
+                    width: 280px;
+                    height: 280px;
+                }
+            }
+    
+            @media (max-width: 768px) {
+                .features-container {
+                    flex-direction: column;
+                }
+                .feature-card {
+                    width: 100%;
+                    max-width: 300px;
+                }
+            }
+
+
+
+
+/* Ready to Play Section */
 .cta {
         background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
         color: white;
@@ -369,32 +419,76 @@
     </style>
 </head>
 <body class="font-sans">
-    <!-- Header Section-->
+    <!-- Navbar Section -->
     <header class="bg-white shadow-md fixed w-full top-0 z-50">
-        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <div class="text-2xl font-bold text-blue-600">PlayThat</div>
-            <div class="hidden md:flex space-x-6">
-                <a href="#home" class="hover:text-blue-600">Home</a>
-                <a href="#about" class="hover:text-blue-600">About</a>
-                <a href="#booking" class="hover:text-blue-600">Booking</a>
-                <a href="#contact" class="hover:text-blue-600">Contact</a>
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-blue-600">PlayThat</div>
+                
+                <!-- Hamburger Menu Button -->
+                <button class="hamburger md:hidden flex flex-col justify-center items-center w-6 h-6" onclick="toggleMenu()">
+                    <span class="hamburger-line w-full h-0.5 bg-gray-600 mb-1.5 rounded-full"></span>
+                    <span class="hamburger-line w-full h-0.5 bg-gray-600 mb-1.5 rounded-full"></span>
+                    <span class="hamburger-line w-full h-0.5 bg-gray-600 rounded-full"></span>
+                </button>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="hover:text-blue-600">Home</a>
+                    <a href="#about" class="hover:text-blue-600">About</a>
+                    <a href="#booking" class="hover:text-blue-600">Booking</a>
+                    <a href="#contact" class="hover:text-blue-600">Contact</a>
+                </div>
+
+                <!-- Desktop Buttons -->
+                <div class="hidden md:flex space-x-4">
+                    <button class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors">Get the App</button>
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Login</button>
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Logout</button>
+                </div>
             </div>
-            <div class="flex space-x-4">
-                <button class="bg-green-500 text-white px-4 py-2 rounded-lg">Get the App</button>
-                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg">Login</button>
-                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg">Logout</button>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu md:hidden">
+                <div class="flex flex-col mt-4 space-y-4 pb-6 px-4">
+                    <a href="#home" class="hover:text-blue-600 py-2 border-b border-gray-100">Home</a>
+                    <a href="#about" class="hover:text-blue-600 py-2 border-b border-gray-100">About</a>
+                    <a href="#booking" class="hover:text-blue-600 py-2 border-b border-gray-100">Booking</a>
+                    <a href="#contact" class="hover:text-blue-600 py-2 border-b border-gray-100">Contact</a>
+                    
+                    <!-- Styled Get the App Button -->
+                    <button class="bg-green-500 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:bg-green-600 transform hover:-translate-y-0.5 transition-all duration-200">
+                        Get the App
+                    </button>
+                    
+                    <!-- Authentication Buttons Container -->
+                    <div class="grid grid-cols-2 gap-4 mt-4">
+                        <button class="auth-button bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:from-blue-700 hover:to-blue-800 transform hover:-translate-y-0.5 transition-all duration-200">
+                            Login
+                        </button>
+                        <button class="auth-button bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:from-indigo-700 hover:to-indigo-800 transform hover:-translate-y-0.5 transition-all duration-200">
+                            Logout
+                        </button>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
 
+    <script>
+        function toggleMenu() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const hamburger = document.querySelector('.hamburger');
+            
+            mobileMenu.classList.toggle('show');
+            hamburger.classList.toggle('active');
+        }
+    </script>
 
-    
+ 
 
-    <!-- Hero Section -->
-    
+    <!-- Hero Section -->    
     <section class="hero-section">
-        
-        
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-badge">
