@@ -307,6 +307,159 @@
             }
 
 
+        
+
+        /*Book Your Activity CSS Starts Here*/
+        .the{
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #f5f5f5;
+            /*min-height: 50vh;*/
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            /*margin: 0;
+            padding: 0;
+            box-sizing: border-box;*/
+        }
+
+        .the-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            /*padding-left: 160px; */ 
+                      
+        }
+
+
+        .search-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .search-box {
+            /*background: white;*/
+            background: rgba(255, 255, 255, 0.9);
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-box.active {
+            border-color: #4169e1;
+        }
+
+        .search-box-content {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            position: relative;
+        }
+
+        .icon {
+            width: 30px;
+            height: 30px;
+            fill:  #4169e1;
+        }
+
+        .input-group {
+            flex: 1;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 4px;
+            color:  #4169e1;
+        }
+
+        .input-group input {
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: 20px;
+            color: #666;
+            padding: 4px 0;
+        }
+
+        .input-group input::placeholder {
+            color: #999;
+        }
+
+
+        .search-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-size: 22px;
+  color: white;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search-button:hover {
+  background-color: #1d4ed8;
+}
+
+.search-icon {
+  width: 16px;
+  height: 16px;
+  color: currentColor;
+}
+
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-top: 8px;
+            display: none;
+            z-index: 1000;
+        }
+
+        .dropdown.show {
+            display: block;
+        }
+
+        .dropdown-item {
+            padding: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f5f5f5;
+        }
+
+        .error {
+            color: #dc3545;
+            font-size: 12px;
+            margin-top: 4px;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .search-container {
+                grid-template-columns: 1fr;
+            }
+            
+        }
+
+        /*Book Your Activity CSS Ends Here*/
+
 
 
 /* Ready to Play Section */
@@ -592,8 +745,8 @@ textarea.form-input {
 }
     </style>
 </head>
-<body class="font-sans">
-    <!-- Navbar Section -->
+<body class="font-sans" id="home">
+    <!-- Navbar Section Starts Here-->
     <header class="bg-white shadow-md fixed w-full top-0 z-50">
         <nav class="container mx-auto px-6 py-3">
             <div class="flex justify-between items-center">
@@ -658,10 +811,10 @@ textarea.form-input {
             hamburger.classList.toggle('active');
         }
     </script>
+    <!-- Navbar Section Ends Here-->
 
  
-
-    <!-- Hero Section -->    
+    <!-- Hero Section Starts Here -->    
     <section class="hero-section">
         <div class="hero-container">
             <div class="hero-content">
@@ -689,14 +842,12 @@ textarea.form-input {
                     </div>
                 </div>
                 </div>
-
-            
                 </section>
+    <!--Hero Section Ends Here-->
 
 
-
-    <!-- About Us Section -->
-<section class="py-20 bg-gradient-to-b from-blue-50 to-white relative overflow-hidden">
+    <!-- About Us Section Starts Here-->
+<section id="about" class="py-20 bg-gradient-to-b from-blue-50 to-white relative overflow-hidden">
     <div class="container mx-auto px-6">
         <!-- Decorative Elements -->
         <div class="absolute top-0 left-0 w-32 h-32 bg-blue-100 rounded-full opacity-50 animate-pulse"></div>
@@ -705,14 +856,12 @@ textarea.form-input {
         <h2 class="text-4xl md:text-4xl font-bold text-center text-blue-600 mb-10 relative z-10">
             About Us
         </h2>
-
         <div class="flex flex-col md:flex-row items-center md:items-start justify-between space-y-10 md:space-y-0 md:space-x-12 relative z-10">
             <!-- Left: Image or Illustration -->
             <div class="w-full md:w-1/2 flex justify-center md:justify-end">
                 <img src="images/c-stadium.jpg" alt="About Us" 
                      class="w-full max-w-md rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
             </div>
-
             <!-- Right: Content -->
             <div class="w-full md:w-1/2 space-y-6 text-center md:text-left">
                 <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
@@ -732,20 +881,16 @@ textarea.form-input {
         </div>
     </div>
 </section>
+<!-- About Us Section Ends Here-->
 
 
-
-    <!-- Why Choose Us Section-->
+    <!-- Why Choose Us Section Starts Here-->
         <section class="py-20 bg-gradient-to-b from-white to-blue-50 relative overflow-hidden">
-    
             <!-- Decorative Elements -->
         <div class="absolute top-0 right-0 w-32 h-32 bg-blue-100 rounded-full opacity-50 animate-pulse"></div>
         <div class="absolute bottom-0 left-0 w-40 h-40 bg-blue-200 rounded-full opacity-30 animate-bounce"></div>
-
-
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-16 text-blue-600">Why Choose Us</h2>
-            
+            <h2 class="text-4xl font-bold text-center mb-16 text-blue-600">Why Choose Us</h2>            
             <div class="features-container">
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -779,104 +924,300 @@ textarea.form-input {
             </div>
         </div>
     </section>
+<!-- Why Choose Us Section Ends Here-->
 
 
-    <!-- Booking Section -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-6">
+    <!-- Booking Section Search Starts Here-->
+    <section id="booking" class="the">
+        <div class="the-container">
             <h2 class="text-4xl font-bold text-center mb-8 text-blue-600">Book Your Activity</h2>
-            <div class="max-w-2xl mx-auto mb-8">
-                <input type="search" placeholder="Search activities or location..." class="w-full p-4 border rounded-lg">
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Sample Activity Cards -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="images/tennis.jpg" alt="Activity" class="w-full">
-                    <div class="p-4">
-                        <h3 class="font-bold mb-2">Tennis Court</h3>
-                        <p class="text-gray-600 mb-4">Professional tennis court with equipment rental available</p>
-                        <div class="flex justify-between items-center">
-                            <span class="font-bold">₹850/hr</span>
-                            <button class="bg-blue-600 text-white px-4 py-2 rounded">Book Now</button>
+            <div class="search-container">
+                <div class="search-box" id="locationBox">
+                    <div class="search-box-content">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        <div class="input-group">
+                            <label>Location</label>
+                            <input type="text" id="location" placeholder="Add place">
+                            <div class="error">Please enter a valid location</div>
+                        </div>
+                        <div class="dropdown" id="locationDropdown">
+                            <div class="dropdown-item">Ahmedabad, GJ</div>
+                            <div class="dropdown-item">Gandhinagar, GJ</div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Sample Activity Cards -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="images/football.jpg" alt="Activity" class="w-full">
-                    <div class="p-4">
-                        <h3 class="font-bold mb-2">Football Court</h3>
-                        <p class="text-gray-600 mb-4">Professional football court with equipment rental available</p>
-                        <div class="flex justify-between items-center">
-                            <span class="font-bold">₹1700/hr</span>
-                            <button class="bg-blue-600 text-white px-4 py-2 rounded">Book Now</button>
+    
+                <div class="search-box" id="personsBox">
+                    <div class="search-box-content">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                        </svg>
+                        <div class="input-group">
+                            <label>Persons</label>
+                            <input type="text" id="persons" placeholder="Add persons" readonly>
+                            <div class="error">Please select number of persons</div>
                         </div>
-                    </div>
-                </div>
-
-
-                <!-- Sample Activity Cards -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="images/basketball.jpg" alt="Activity" class="w-full">
-                    <div class="p-4">
-                        <h3 class="font-bold mb-2">Basketball Court</h3>
-                        <p class="text-gray-600 mb-4">Professional tennis court with equipment rental available</p>
-                        <div class="flex justify-between items-center">
-                            <span class="font-bold">₹1500/hr</span>
-                            <button class="bg-blue-600 text-white px-4 py-2 rounded">Book Now</button>
+                        <div class="dropdown" id="personsDropdown">
+                            <div class="dropdown-item">1 Person</div>
+                            <div class="dropdown-item">2 Persons</div>
+                            <div class="dropdown-item">3 Persons</div>
+                            <div class="dropdown-item">4+ Persons</div>
                         </div>
-                    </div>
-                </div>
-
-
-                <!-- Sample Activity Cards -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="images/cricket.jpg" alt="Activity" class="w-full">
-                    <div class="p-4">
-                        <h3 class="font-bold mb-2">Box Cricket</h3>
-                        <p class="text-gray-600 mb-4">Box Cricket court with equipment rental available</p>
-                        <div class="flex justify-between items-center">
-                            <span class="font-bold">₹1000/hr</span>
-                            <button class="bg-blue-600 text-white px-4 py-2 rounded">Book Now</button>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- Sample Activity Cards -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="images/volleyball.jpg" alt="Activity" class="w-full">
-                    <div class="p-4">
-                        <h3 class="font-bold mb-2">Volleyball Court</h3>
-                        <p class="text-gray-600 mb-4">Volleyball court with equipment rental available</p>
-                        <div class="flex justify-between items-center">
-                            <span class="font-bold">₹500/hr</span>
-                            <button class="bg-blue-600 text-white px-4 py-2 rounded">Book Now</button>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- Sample Activity Cards -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden relative">
-                    <!-- Circular Button -->
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <a href="#activities" 
-                           class="w-36 h-36 bg-gradient-to-r from-blue-500 to-green-500 text-white flex items-center justify-center rounded-full shadow-lg transform hover:scale-105 transition duration-300">
-                            <span class="font-bold text-sm text-center leading-tight">Explore<br>More</span>
-                        </a>
                     </div>
                 </div>
                 
-                
-                <!-- More activity cards would go here -->
+    
+                <div class="search-box" id="checkInBox">
+                    <div class="search-box-content">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 6v2h14V6H5zm2 4h10v2H7v-2z"/>
+                        </svg>
+                        <div class="input-group">
+                            <label>Date</label>
+                            <input type="date" id="checkIn" placeholder="Add date">
+                            <div class="error">Please select a date</div>
+                        </div>
+                    </div>
+                </div>
+
+                    <button class="search-button">
+                        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <circle cx="11" cy="11" r="8"></circle>
+                          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        Search
+                      </button>
+                      
+                </div>
             </div>
+    
+            
         </div>
+    
+        <script>
+            
+    
+            // Location Dropdown
+            const locationInput = document.getElementById('location');
+            const locationDropdown = document.getElementById('locationDropdown');
+            const locationBox = document.getElementById('locationBox');
+    
+            locationInput.addEventListener('focus', () => {
+                locationBox.classList.add('active');
+                locationDropdown.classList.add('show');
+            });
+    
+            locationDropdown.addEventListener('click', (e) => {
+                if (e.target.classList.contains('dropdown-item')) {
+                    locationInput.value = e.target.textContent;
+                    locationDropdown.classList.remove('show');
+                    locationBox.classList.remove('active');
+                }
+            });
+    
+            // Persons Dropdown
+    const personsInput = document.getElementById('persons');
+    const personsDropdown = document.getElementById('personsDropdown');
+    const personsBox = document.getElementById('personsBox');
+    
+    personsInput.addEventListener('click', () => {
+        personsBox.classList.add('active');
+        personsDropdown.classList.add('show');
+    });
+    
+    personsDropdown.addEventListener('click', (e) => {
+        if (e.target.classList.contains('dropdown-item')) {
+            personsInput.value = e.target.textContent;
+            personsDropdown.classList.remove('show');
+            personsBox.classList.remove('active');
+        }
+    });
+    
+    
+            // Date Validation
+            const checkInInput = document.getElementById('checkIn');
+            const checkOutInput = document.getElementById('checkOut');
+    
+            checkInInput.addEventListener('change', () => {
+                const checkInDate = new Date(checkInInput.value);
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+    
+                if (checkInDate < today) {
+                    checkInInput.parentElement.querySelector('.error').style.display = 'block';
+                    checkInInput.value = '';
+                } else {
+                    checkInInput.parentElement.querySelector('.error').style.display = 'none';
+                    checkOutInput.min = checkInInput.value;
+                }
+            });
+    
+            checkOutInput.addEventListener('change', () => {
+                const checkInDate = new Date(checkInInput.value);
+                const checkOutDate = new Date(checkOutInput.value);
+    
+                if (checkOutDate <= checkInDate) {
+                    checkOutInput.parentElement.querySelector('.error').style.display = 'block';
+                    checkOutInput.value = '';
+                } else {
+                    checkOutInput.parentElement.querySelector('.error').style.display = 'none';
+                }
+            });
+    
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('#locationBox')) {
+                    locationDropdown.classList.remove('show');
+                    locationBox.classList.remove('active');
+                }
+                if (!e.target.closest('#personsBox')) {
+                    personsDropdown.classList.remove('show');
+                    personsBox.classList.remove('active');
+                }
+            });
+    
+            // Form Validation and Submit
+            const searchButton = document.getElementById('searchButton');
+            searchButton.addEventListener('click', () => {
+                let isValid = true;
+                const errorMessages = document.querySelectorAll('.error');
+                errorMessages.forEach(error => error.style.display = 'none');
+    
+                if (!locationInput.value) {
+                    locationInput.parentElement.querySelector('.error').style.display = 'block';
+                    isValid = false;
+                }
+    
+                if (!personsInput.value) {
+                    personsInput.parentElement.querySelector('.error').style.display = 'block';
+                    isValid = false;
+                }
+    
+                if (!checkInInput.value) {
+                    checkInInput.parentElement.querySelector('.error').style.display = 'block';
+                    isValid = false;
+                }
+    
+                if (!checkOutInput.value) {
+                    checkOutInput.parentElement.querySelector('.error').style.display = 'block';
+                    isValid = false;
+                }
+    
+                if (isValid) {
+                    const searchData = {
+                        cabinClass: cabinClass.querySelector('.active').textContent,
+                        location: locationInput.value,
+                        persons: personsInput.value,
+                        checkIn: checkInInput.value,
+                        checkOut: checkOutInput.value
+                    };
+                    console.log('Search Data:', searchData);
+                    // Here you would typically send the data to a server
+                    alert('Search submitted successfully!');
+                }
+            });
+        </script>
     </section>
+<!-- Booking Section Search Starts Here-->
 
 
-    <!--Ready to Play Section-->
+<!-- Activity Section Starts Here -->
+<section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-8 text-blue-600">Activities</h2>
+        <!--<div class="max-w-2xl mx-auto mb-8">
+            <input type="search" placeholder="Search Activity" class="w-full p-4 border rounded-lg">
+        </div>-->
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Sample Activity Cards -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="images/tennis.jpg" alt="Activity" class="w-full">
+                <div class="p-4">
+                    <h3 class="font-bold mb-2">Tennis Court</h3>
+                    <p class="text-gray-600 mb-4">Professional tennis court with equipment rental available</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600">Starting at <span class="font-bold">₹850/hr</span> </span>
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded">Book Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sample Activity Cards -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="images/football.jpg" alt="Activity" class="w-full">
+                <div class="p-4">
+                    <h3 class="font-bold mb-2">Football Court</h3>
+                    <p class="text-gray-600 mb-4">Professional football court with equipment rental available</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600">Starting at <span class="font-bold">₹1700/hr</span></span>
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded">Book Now</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Sample Activity Cards -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="images/basketball.jpg" alt="Activity" class="w-full">
+                <div class="p-4">
+                    <h3 class="font-bold mb-2">Basketball Court</h3>
+                    <p class="text-gray-600 mb-4">Professional tennis court with equipment rental available</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600">Starting at <span class="font-bold">₹1500/hr</span></span>
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded">Book Now</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Sample Activity Cards -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="images/cricket.jpg" alt="Activity" class="w-full">
+                <div class="p-4">
+                    <h3 class="font-bold mb-2">Box Cricket</h3>
+                    <p class="text-gray-600 mb-4">Box Cricket court with equipment rental available</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600">Starting at <span class="font-bold">₹1000/hr</span> </span>
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded">Book Now</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Sample Activity Cards -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="images/volleyball.jpg" alt="Activity" class="w-full">
+                <div class="p-4">
+                    <h3 class="font-bold mb-2">Volleyball Court</h3>
+                    <p class="text-gray-600 mb-4">Volleyball court with equipment rental available</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600">Starting at <span class="font-bold">₹500/hr</span></span>
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded">Book Now</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Sample Activity Cards -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden relative min-h-[200px] md:min-h-[300px]">
+                <!-- Circular Button -->
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <a href="#activities" 
+                       class="w-36 h-36 bg-gradient-to-r from-blue-500 to-green-500 text-white flex items-center justify-center rounded-full shadow-lg transform hover:scale-105 transition duration-300">
+                        <span class="font-bold text-sm text-center leading-tight">Explore<br>More</span>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<!-- Activity Section Ends Here -->
+
+
+    <!--Ready to Play Section Starts Here-->
     <section class="cta">
         <div class="cta-circles">
             <div class="cta-circle"></div>
@@ -888,14 +1229,13 @@ textarea.form-input {
             <button class="cta-button">Get Started Now</button>
         </div>
     </section>
+    <!--Ready to Play Section Ends Here-->
 
 
-    <!-- Contact Us Section-->
-    <section class="py-16 bg-gray-100">
+    <!-- Contact Us Section Starts Here-->
+    <section id="contact" class="py-16 bg-gray-100">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-bold text-center  text-blue-600">Contact Us</h2>
-            
-
             <div class="contact-us ">    
                 <div class="page-container">
                     <div class="business-card">
@@ -932,14 +1272,13 @@ textarea.form-input {
                     </div>
                 </div>
             </div>
-
-
         </div>
         </div>
     </section>
+    <!-- Contact Us Section Ends Here-->
 
 
-    <!-- Footer Section-->
+    <!-- Footer Section Starts Here-->
     <footer class="bg-gray-800 text-white py-12">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-8">
@@ -974,5 +1313,6 @@ textarea.form-input {
             </div>
         </div>
     </footer>
+    <!-- Footer Section Ends Here-->
 </body>
 </html>
